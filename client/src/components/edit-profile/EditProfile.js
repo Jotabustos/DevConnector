@@ -34,9 +34,9 @@ class CreateProfile extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  componentDidMount(){
-      this.props.getCurrentProfile();
-  }
+    componentDidMount() {
+        this.props.getCurrentProfile();
+    }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
@@ -57,6 +57,7 @@ class CreateProfile extends Component {
         profile.status = !isEmpty(profile.status) ? profile.status : '';
         profile.githubusername = !isEmpty(profile.githubusername) ? profile.githubusername : '';
         profile.bio = !isEmpty(profile.bio) ? profile.bio : '';
+        profile.social = !isEmpty(profile.social) ? profile.social : {};
         profile.twitter = !isEmpty(profile.social.twitter) ? profile.social.twitter : '';
         profile.facebook = !isEmpty(profile.social.facebook) ? profile.social.facebook : '';
         profile.linkedin = !isEmpty(profile.social.linkedin) ? profile.social.linkedin : '';
