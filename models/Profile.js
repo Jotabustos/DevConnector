@@ -35,6 +35,23 @@ const ProfileSchema = new Schema({
     githubusername: {
         type: String
     },
+    social: {
+        youtube: {
+            type: String
+        },
+        linkedin: {
+            type: String
+        },
+        twitter: {
+            type: String
+        },
+        instagram: {
+            type: String
+        },
+        facebook: {
+            type: String
+        }
+    },
     experience: [
         {
             title: {
@@ -93,23 +110,7 @@ const ProfileSchema = new Schema({
             }
         }
     ],
-    social: {
-        youtube: {
-            type: String
-        },
-        linkedin: {
-            type: String
-        },
-        twitter: {
-            type: String
-        },
-        instagram: {
-            type: String
-        },
-        facebook: {
-            type: String
-        }
-    },
+    
     date: {
         type: Date,
         default: Date.now

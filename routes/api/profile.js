@@ -160,7 +160,7 @@ router.post(
 
             // Save Profile
             const newUser = new Profile(profileFields);
-            newUser.save().then(profile => res.json(profile));
+            newUser.save().then(profile => res.json(profileFields));
           })
           .catch(err => res.status(400).json(err));
       }
