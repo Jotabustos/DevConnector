@@ -4,7 +4,8 @@ import {
   PROFILE_LOADING,
   CLEAR_CURRENT_PROFILE,
   GET_ERRORS,
-  SET_CURRENT_USER
+  SET_CURRENT_USER,
+  GET_PROFILES
 } from "./types";
 
 // Get current profile
@@ -25,6 +26,27 @@ export const getCurrentProfile = () => dispatch => {
       })
     );
 };
+
+// Get current profile
+export const getProfileByHandle = (handle) => dispatch => {
+  dispatch(setProfileLoading());
+  axios
+    .get(`/api/profile/handle/${handle}`)
+    .then(res =>
+      dispatch({
+        type: GET_PROFILE,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PROFILE,
+        payload: null
+      })
+    );
+};
+
+
 
 // Profile Loading
 export const setProfileLoading = () => {
@@ -79,6 +101,23 @@ export const deleteExperience = id => dispatch => {
     )
     .catch(err => dispatch({ type: GET_ERRORS, payload: err.response.data }));
 };
+
+// Get Profiles
+
+export const getProfiles = () => dispatch => {
+  dispatch(setProfileLoading());
+  axios
+    .get('/api/profile/all/')
+    .then(res =>
+      dispatch({
+        type: GET_PROFILES,
+        payload: res.data
+      })
+    )
+    .catch(err => dispatch({ type: GET_PROFILES, payload: err.response.data }));
+};
+
+
 
 // Delete Education
 
