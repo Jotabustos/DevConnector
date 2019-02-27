@@ -6,6 +6,7 @@ import Spinner from '../common/Spinner';
 import { getPosts } from '../../actions/postActions';
 import PostFeed from './PostFeed';
 
+
 class Posts extends Component {
 
     componentDidMount(){

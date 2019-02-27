@@ -12,7 +12,7 @@ import { clearCurrentProfile } from "./actions/profileActions";
 
 import "./App.css";
 import Navbar from "./components/layout/Navbar";
-import Footer from "./components/layout/Footer";
+// import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -110,7 +110,7 @@ class App extends Component {
               </Switch>
               
             </div>
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </Router>
       </Provider>
